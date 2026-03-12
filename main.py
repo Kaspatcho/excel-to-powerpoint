@@ -1,10 +1,17 @@
 import pandas as pd
 from pptx import Presentation
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+parser.add_argument("-p", "--path", type=str, default="dados.xlsx")
+parser.add_argument("-t", "--template", type=str, default="template.pptx")
+parser.add_argument("-o", "--output", type=str, default="relatorio_final.pptx")
+args = parser.parse_args()
 
 # -------------------------
 # 1. Ler planilha
 # -------------------------
-df = pd.read_excel("dados.xlsx")
+df = pd.read_excel(args.path)
 
 # -------------------------
 # 2. Fazer análise
@@ -33,7 +40,7 @@ dados = {
 # -------------------------
 # 3. Abrir template pptx
 # -------------------------
-prs = Presentation("template.pptx")
+prs = Presentation(args.template)
 
 # -------------------------
 # 4. Substituir textos
@@ -51,6 +58,6 @@ for slide in prs.slides:
 # -------------------------
 # 5. Salvar novo relatório
 # -------------------------
-prs.save("relatorio_final.pptx")
+prs.save(args.output)
 
 print("Relatório gerado!")
