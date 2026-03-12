@@ -12,6 +12,14 @@ Em seguida, você precisará instalar as dependências do projeto com o comando 
 
 Para rodar o programa, você precisará executar o comando `python main.py`.
 
+## Argumentos do programa
+
+O programa utiliza o seguinte argumentos:
+
+* `-p` ou `--path`: Caminho para o arquivo Excel que contém a planilha. O padrão é `dados.xlsx`.
+* `-t` ou `--template`: Caminho para o template do PowerPoint. O padrão é `template.pptx`.
+* `-o` ou `--output`: Caminho para o arquivo do relatório gerado. O padrão é `relatorio_final.pptx`.
+
 ## Template do PowerPoint
 
 O template do PowerPoint deve conter os seguintes placeholders:
